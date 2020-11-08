@@ -544,7 +544,7 @@ template {
   background-position: center; }
 
 .icon--menu::after {
-  background-image: url("/src/img/icons/menu.svg"); }
+  background-image: url("img/icons/menu.svg"); }
 
 .icon--phone::after {
   background-image: url("/src/img/icons/phone.svg"); }
