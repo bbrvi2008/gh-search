@@ -1,0 +1,26 @@
+.form {
+    padding: 24px 0;
+
+    &__input {
+        margin-bottom: 16px;
+    }
+
+    &__p {
+        margin: 0;
+        font-size: 14px;
+        line-height: 16px;
+        font-weight: 500;
+        color: #7E7E82;
+    }
+
+    &__link {
+        text-decoration: none;
+        color: #FF3E79;
+    }
+
+    &__footer {
+        margin-top: 24px;
+        display: flex;
+        justify-content: flex-end;
+    }
+}

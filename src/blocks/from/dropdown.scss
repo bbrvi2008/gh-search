@@ -1,0 +1,40 @@
+.dropdown {
+  position: relative;
+
+  
+
+  &__list {
+    @include reset-list;
+    // display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    top: calc(100% + 2px);
+    box-shadow: 2px 2px 5px #EAEAEA;
+    background-color: #FFFFFF;
+    border: 1px solid #EAEAEA;
+    border-radius: 6px;
+    padding: 0 16px;
+    max-height: 297px;
+    overflow-y: auto;
+  }
+
+  &__input {
+    // &:focus + .dropdown__list {
+    //   display: block;
+    // }
+  }
+
+  &__list-item {
+    padding: 8px 0;
+
+    &:nth-last-child(n + 2) {
+      border-bottom: 1px solid  #EAEAEA;
+    }
+
+    &:hover {
+      background-color: $hover-background-color;
+    }
+  }
+}

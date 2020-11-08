@@ -1,0 +1,101 @@
+@mixin content-text {
+  font-family: 'TT Lakes', sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.2px;
+  color: #1B1C21;
+}
+
+@mixin highlight-text {
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+  font-weight: 500;
+}
+
+@mixin reset-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+@mixin vertical-middle {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@mixin full-viewport {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+@mixin recolor($color: #000, $opacity: 1) {
+  $r: red($color) / 255;
+  $g: green($color) / 255;
+  $b: blue($color) / 255;
+  $a: $opacity;
+
+  // grayscale fallback if SVG from data url is not supported
+  $lightness: lightness($color);
+  filter: saturate(0%) brightness(0%) invert($lightness) opacity($opacity);
+
+  // color filter
+  $svg-filter-id: "recolor";
+  filter: url('data:image/svg+xml;utf8,\
+    <svg xmlns="http://www.w3.org/2000/svg">\
+      <filter id="#{$svg-filter-id}" color-interpolation-filters="sRGB">\
+        <feColorMatrix type="matrix" values="\
+          0 0 0 0 #{$r}\
+          0 0 0 0 #{$g}\
+          0 0 0 0 #{$b}\
+          0 0 0 #{$a} 0\
+        "/>\
+      </filter>\
+    </svg>\
+    ##{$svg-filter-id}');
+}
+
+
+@mixin content-wrapper {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding-left: 16px;
+  padding-right: 16px;
+
+  @media (min-width: $screen-md) {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  
+  @media (min-width: $screen-xl) {
+    padding-left: 34px;
+    padding-right: 34px;
+  }
+}
+
+@mixin content-scrollable {
+  position: relative;
+  padding-right: 0;
+  overflow: hidden;
+
+  @media (min-width: $screen-md) {
+    padding-right: 0;
+  }
+
+  @media (min-width: $screen-xl) {
+    padding-right: 0;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    background: linear-gradient(270deg, #F8F8F8 16.84%, rgba(248, 248, 248, 0.0001) 100%);
+    z-index: 1;
+    top: 0;
+    bottom: 0;
+    right: 0;
+  }
+}

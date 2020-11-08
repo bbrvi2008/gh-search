@@ -1,0 +1,17 @@
+.page-main {
+  min-height: 100vh;
+  background-color: #F8F8F8;
+  border-bottom: 1px solid #F8F8F8;
+
+  &__item {
+    margin-bottom: 24px;
+
+    @media (min-width: $screen-md) {
+      margin-bottom: 32px;
+    }
+
+    @media (min-width: $screen-xl) {
+      margin-bottom: 50px;
+    }
+  }
+}

@@ -1,0 +1,136 @@
+.button {
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  background: none;
+  white-space: nowrap;
+  transition: all ease-in .1s;
+
+
+  &:hover {
+    .button__icon--background {
+      &::before {
+        transform: scale(1);
+      }
+
+      &::after {
+        @include recolor($hover-text-color);
+      }
+    }
+
+    .button__text {
+      color: $hover-text-color;
+    }
+  }
+
+  &__icon {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: all ease-in .1s;
+
+    &::after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      transition: all ease-out .3s;
+    }
+
+    &--background {
+      background-color: #FF3E79;
+
+      &::before {
+        content: '';
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 50%;
+        background-color: $hover-background-color;
+        border: 5px solid #FF3E79;
+        transform: scale(0);
+        transition: transform ease-out .3s;
+      }
+    }
+
+    &--border {
+      @include recolor(#FF3E79);
+      border: 2px solid #FF3E79;
+    }
+  }
+
+  &__text {
+    @include highlight-text;
+    transition: all ease-in .1s;
+
+    &--margin--left {
+      margin-left: 8px;
+    }
+
+    &--margin--right {
+      margin-right: 8px;
+    }
+  }
+
+  &--background {
+    height: 32px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    background-color: #FF3E79;
+
+    &:hover {
+      background-color: $hover-background-color;
+
+      .button__icon {
+        @include recolor($hover-text-color);
+      }
+    }
+
+    .button__text {
+      text-transform: uppercase;
+      font-size: 12px;
+      line-height: 24px;
+      color: #FFFFFF;
+      font-weight: bold;
+    }
+
+    .button__icon {
+      @include recolor(#FFFFFF);
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  &--text {
+    text-align: left;
+
+    &:hover {
+
+      .button__icon {
+        @include recolor($hover-text-color);
+      }
+    } 
+    
+    .button__text {
+      white-space: normal;
+    }
+    
+    .button__icon {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  &--hidden--xs {
+    @media (max-width: $screen-md - 1) {
+      display: none;
+    }
+  }
+}

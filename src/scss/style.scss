@@ -1,0 +1,24 @@
+@import 'variables.scss';
+@import 'fonts.scss';
+@import 'mixins.scss';
+
+@import '../blocks/responsive-table/responsive-table.scss';
+@import '../blocks/button/button.scss';
+@import '../blocks/icon/icon.scss';
+
+@import '../blocks/page/page-main.scss';
+@import '../blocks/content/content-wrapper.scss';
+
+@import '../blocks/from/form.scss';
+@import '../blocks/from/input-text.scss';
+@import '../blocks/from/dropdown.scss';
+
+
+body {
+  @include content-text;
+  min-width: 320px;
+}
+
+*, *::after, *::before {
+  box-sizing: border-box;
+}

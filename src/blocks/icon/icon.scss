@@ -1,0 +1,52 @@
+.icon::after {
+  content: '';
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.icon--menu::after {
+  background-image: url('/src/img/icons/menu.svg');
+}
+
+.icon--phone::after {
+  background-image: url('/src/img/icons/phone.svg');
+}
+
+.icon--message::after {
+  background-image: url('/src/img/icons/message.svg');
+}
+
+.icon--people::after {
+  background-image: url('/src/img/icons/people.svg');
+}
+
+.icon--order::after {
+  background-image: url('/src/img/icons/order.svg');
+}
+
+.icon--status::after {
+  background-image: url('/src/img/icons/status.svg');
+}
+
+.icon--more::after {
+  background-image: url('/src/img/icons/more.svg');
+}
+
+.icon--less::after {
+  background-image: url('/src/img/icons/more.svg');
+  transform: rotate(180deg);
+}
+
+.icon--search::after {
+  background-image: url('/src/img/icons/search.svg');
+}
+
+.icon--close::after {
+  background-image: url('/src/img/icons/close.svg');
+}
+
+.icon--dropdown::after {
+  background-image: url('/src/img/icons/dropdown.svg');
+}
