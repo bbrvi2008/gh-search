@@ -572,7 +572,7 @@ template {
   background-image: url("/src/img/icons/search.svg"); }
 
 .icon--close::after {
-  background-image: url("/src/img/icons/close.svg"); }
+  background-image: url("img/icons/close.svg"); }
 
 .icon--dropdown::after {
   background-image: url("/src/img/icons/dropdown.svg"); }
